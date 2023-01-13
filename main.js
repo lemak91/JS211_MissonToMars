@@ -11,7 +11,37 @@ const jobTypes = {
 
 // Your code will go here
 
+    // it('should have a name, a job, a specialSkill and ship upon instantiation', function(){
 
+class CrewMember {
+  constructor(name, job, specialSkill) {
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = null;
+  }
+  enterShip(ship){
+    this.ship = ship;
+    this.ship.crew.push(this);
+  }
+}
+
+    // it('should have a name, a type, an ability and an empty crew upon instantiation', function(){
+class Ship {
+  constructor(name, type, ability) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+  missionStatement(){
+    if (this.crew.length === 0) {
+      return "Can't perform a mission yet.";
+    } else {
+      return this.ability;
+    }
+  }
+}
 
 
 
